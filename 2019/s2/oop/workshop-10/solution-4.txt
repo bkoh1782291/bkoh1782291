@@ -1,0 +1,10 @@
+4. Consider a rat in a maze. There is only one entry and one exit. There are blocks in its path and it can easily take a wrong route. Find a path from the entry to the exit.
+
+bunch of if statements
+
+if rat hits a wall, the rat must reverse
+keep track of location
+
+but we need a way to tell it to take a different turn when needed.
+
+

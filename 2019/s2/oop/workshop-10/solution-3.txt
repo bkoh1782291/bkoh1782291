@@ -1,0 +1,7 @@
+3. Find the frequency of any given word in a book.
+
+sort all the words in the book into individual vectors 
+
+find frequency by checking the count of vector(s)
+
+

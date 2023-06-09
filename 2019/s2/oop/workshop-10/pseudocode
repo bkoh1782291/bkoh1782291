@@ -1,0 +1,11 @@
+1. You are given an array of sorted integers a of size n, and a number x. Find x in the array.  
+
+2. Write code that for each element equal to 0 in a two-dimensional array, will zero out all the elements on the same line and column.
+
+3. Find the frequency of any given word in a book.
+
+4. Consider a rat in a maze. There is only one entry and one exit. There are blocks in its path and it can easily take a wrong route. Find a path from the entry to the exit.
+
+5. You are given a blank chess board and a starting position for a bishop. You're also given a target square. Write an algorithm that returns the minimum number of turns for the bishop to reach the target.
+
+6. The shortest path length between two words is defined as the smallest number of letters which must be inserted between the two words such that only an overlapping sequence of words from a given dictionary are used to form the path. For example, consider a dictionary consisting of the names of animals. A path from cat to dog is catigerhinocerosheepumammothunderbirdog (ie. cat → tiger → rhinoceros → sheep → puma → mammoth → thunderbird → dog). The length of this path is the number of intervening letters, in this case 33 (the length of the string igerhinocerosheepumammothunderbir). The shortest path from cat to dog is 2 via the sequence catoadog (ie. cat → toad → dog) as only two intervening letters are required. Given a file of words, find the shortest path from one word to another.

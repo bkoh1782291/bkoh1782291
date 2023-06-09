@@ -1,0 +1,3 @@
+5. You are given a blank chess board and a starting position for a bishop. You're also given a target square. Write an algorithm that returns the minimum number of turns for the bishop to reach the target.
+
+

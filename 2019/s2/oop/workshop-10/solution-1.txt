@@ -1,0 +1,6 @@
+1. You are given an array of sorted integers a of size n, and a number x. Find x in the array.  
+
+a[n] find x
+
+for loop
+comparison operator

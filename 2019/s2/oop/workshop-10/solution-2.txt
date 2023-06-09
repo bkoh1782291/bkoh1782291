@@ -1,0 +1,26 @@
+2. Write code that for each element equal to 0 in a two-dimensional array, will zero out all the elements on the same line and column.
+
+123
+456
+789
+
+103
+000
+709
+
+for loop for rows
+	for loop for columns
+		if element = 0 
+			for loop for rows
+				set column to 0
+			end
+			for loop for columns
+				set rows to 0 
+			end
+		end
+	end
+end
+
+
+	
+
