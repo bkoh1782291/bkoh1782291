@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import sys, socket
+socket.setdefaulttimeout(0.1) # set timeout to 100ms
+host = ".adelaide.edu.au"
+
+with open('dnsmap.txt', 'r') as Lines:
+		for line in Lines
+			try:
+			    line = line.rstrip("\n")
+			    test = line + host
+			    ip = socket.gethostbyname(host)
+			    print(f"{test} resolves to {ip}")
+			except:
+			    pass # ignore error

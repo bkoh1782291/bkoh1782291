@@ -1,0 +1,9 @@
+{
+	"cmake.configureOnOpen": true,
+	"files.associations": {
+		"*.hamlc": "haml",
+		"stdint.h": "c",
+		"stdlib.h": "c",
+		"stdio.h": "c"
+	}
+}

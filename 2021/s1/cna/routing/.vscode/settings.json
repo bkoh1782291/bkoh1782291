@@ -1,0 +1,13 @@
+{
+	"files.associations": {
+		"*.hamlc": "haml",
+		"string_view": "cpp",
+		"array": "cpp",
+		"ranges": "cpp",
+		"iostream": "cpp",
+		"iterator": "cpp",
+		"ostream": "cpp",
+		"string": "cpp",
+		"cstring": "cpp"
+	}
+}

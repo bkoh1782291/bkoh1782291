@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.hamlc": "haml",
+		"bit": "c"
+	}
+}
