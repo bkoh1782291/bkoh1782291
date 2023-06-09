@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <title>Profile Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="login.css" >
+        <link rel="stylesheet" type="text/css" href="profile.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="scripts.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+      <div class="top-container">
+        <h1 style="padding: 5px">Profile Page</h1>
+      </div>
+
+    <div class="header" id="myHeader" >
+      <h2>
+        <button class="headerbutton" style="float: right">Back To Home</button>
+        <a class="clock" id="clockbox"></a>
+      </h2>
+    </div>
+
+    <br><br><br>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <h2 style="text-align: center">Welcome Back!</h2>
+      <hr class="line12">
+
+      <br><br><br>
+
+    <div class="box-container" id="profile">
+
+      <div class="box1">
+        <img class="roundimg" src="img_avatar.png" alt="Avatar" style="width:300px">
+        <br>
+        <h2 style="padding: 5px 200px;">Alfred Tay</h2>
+        <h3 style="padding: 5px 210px;">Manager</h3>
+      </div>
+
+      <div class="box2">
+          <h2>Profile</h2>
+        <br>
+          <div class="rectangle" id="age">Age</div>
+            <p style="padding: 0px 20px; text-align: left; font-size: 20px">{{ age }}</p>
+          <div class="rectangle" style="padding: 10px 30px;">Position</div>
+            <p style="padding: 0px 20px; text-align: left; font-size: 20px">{{ position }}</p>
+          <div class="rectangle" style="padding: 10px 80px;">People They Manage</div>
+            <ul style="padding: 0px 30px; text-align: left; font-size: 20px">
+              <li v-for="item in items" :key="item.people">
+                {{ item.people }}
+              </li>
+            </ul>
+      </div>
+
+    </div>
+
+    <br><br><br><br><br>
+
+    <button class="footerbutton" style="float: left; margin: 10px 80px"> Update Profile </button>
+
+    <br><br><br><br><br>
+
+  <footer class="footer">
+    <h2>
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right"> Contact </button>
+        <button class="footerbutton" style="float: left"> Help </button>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+    <script>
+      window.onscroll = function() {scrollingheader();};
+
+      var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+      function GetClock(){
+          var d=new Date();
+          var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+          var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+          if(nhour==0){ap=" AM";nhour=12;}
+          else if(nhour<12){ap=" AM";}
+          else if(nhour==12){ap=" PM";}
+          else if(nhour>12){ap=" PM";nhour-=12;}
+
+          if(nmin<=9) nmin="0"+nmin;
+          if(nsec<=9) nsec="0"+nsec;
+
+          var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+          document.getElementById('clockbox').innerHTML=clocktext;
+          }
+      GetClock();
+      setInterval(GetClock,1000);
+
+    </script>
+
+
+    </body>
+</html>

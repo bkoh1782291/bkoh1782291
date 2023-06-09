@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <script src="scripts.js"></script>
+      <title>Home Page</title>
+      <script src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+  <body>
+
+  <div class="top-container">
+    <h1 style="padding: 5px">Welcome Back!</h1>
+  </div>
+
+  <div class="header" id="myHeader" >
+    <h2>
+      <button class="headerbutton" style="float: right" onclick="loginredirect();">Login</button>
+      <button class="headerbutton" style="float: right" onclick="signupredirect();">Sign Up</button>
+      <a class="clock" id="clockbox"></a>
+    </h2>
+  </div>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <div class="content">
+    <h3 style="padding: 5px; font-size: 28px">This Week's Tasks!</h3>
+
+    <hr class="line1"> <!--horizontal line-->
+    <p style="padding: 5px"></p>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Today</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group">
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+    <br>
+
+    <div class="btn-group">
+      <button>Website Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>7h</button>
+      <button><progress id="file" value="30" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+      <button>Data Leak</button>
+      <button>Brian, Rachel, Irvin </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>12h</button>
+      <button><progress id="file" value="70" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="90" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br><br><br>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Monday</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group">
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred</button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="50" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+      <button>Code</button>
+      <button>Brian </button>
+      <button style="background-color: #F4D06F">Medium</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="btn-group">
+      <button>Algorithms</button>
+      <button>Steve</button>
+      <button id="priority" style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+  </div>
+
+  <br><br><br>
+
+  <footer class="footer">
+    <h2>
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right"> Contact </button>
+        <button class="footerbutton" style="float: left"> Help </button>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+<script>
+    window.onscroll = function() {scrollingheader();};
+
+    var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    function GetClock(){
+    var d=new Date();
+    var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+    var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+    if(nhour==0){ap=" AM";nhour=12;}
+    else if(nhour<12){ap=" AM";}
+    else if(nhour==12){ap=" PM";}
+    else if(nhour>12){ap=" PM";nhour-=12;}
+
+    if(nmin<=9) nmin="0"+nmin;
+    if(nsec<=9) nsec="0"+nsec;
+
+    var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+    document.getElementById('clockbox').innerHTML=clocktext;
+    }
+    GetClock();
+    setInterval(GetClock,1000);
+</script>
+
+
+
+  </body>
+</html>

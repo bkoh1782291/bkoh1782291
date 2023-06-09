@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <title>Sign Up Page</title>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="signup.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+      <div class="top-container">
+        <h1 style="padding: 5px">Sign Up Page</h1>
+      </div>
+
+      <div class="header" id="myHeader" >
+        <h2>
+          <button class="headerbutton" style="float: right" onclick="home()">Back To Home</button>
+          <a class="clock" id="clockbox"></a>
+        </h2>
+      </div>
+
+    <br><br><br>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- signup Page Code -->
+    <div id="main-holder" class="signupbody" style="margin: auto;">
+
+    <br><br><br>
+    <div id="signup-error-msg-holder">
+      <p id="signup-error-msg">This Username Has Been Taken <span id="error-msg-second-line"></span></p>
+      <br>
+      <h3 style="color: black; margin: 4px" >Sign Up to Create An Account!</h3>
+      <hr class="line3" style="color: black" >
+    </div>
+<br>
+
+  <form action="signup" method="POST">
+     <div id="role-selection" >
+        <input type="radio" id="userradio" name="position" value="1">
+        <label for="User">User</label><br>
+
+        <input type="radio" id="managerradio" name="position" value="2">
+        <label for="Manager">Manager</label><br><br>
+      </div>
+
+    <div id="signup-form">
+      <input type="text" name="username" id="username-field" class="signup-form-field" placeholder="Username" required>
+      <input type="password" name="password" id="password-field" class="signup-form-field" placeholder="Password" required>
+      <input type="submit" value="Create Account" id="signup-form-submit">
+    </div>
+  </form>
+
+    <h4 style="text-align: center; color: black">Already Have An Account? <button class="allbutton" onclick="login()">Login Here !</button></h4>
+
+    </div>
+
+    <br><br><br>
+
+  <footer class="footer">
+    <h2 class="popup">
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right" onclick="popupbtnright()"> Contact </button>
+            <span class="popuptextright" id="myPopupright">
+              Contact Email: a1782291@adelaide.edu.au
+            </span>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+    <script>
+      window.onscroll = function() {scrollingheader();};
+
+      var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+      function GetClock(){
+          var d=new Date();
+          var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+          var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+          if(nhour==0){ap=" AM";nhour=12;}
+          else if(nhour<12){ap=" AM";}
+          else if(nhour==12){ap=" PM";}
+          else if(nhour>12){ap=" PM";nhour-=12;}
+
+          if(nmin<=9) nmin="0"+nmin;
+          if(nsec<=9) nsec="0"+nsec;
+
+          var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+          document.getElementById('clockbox').innerHTML=clocktext;
+          }
+      GetClock();
+      setInterval(GetClock,1000);
+
+    </script>
+
+
+    </body>
+</html>

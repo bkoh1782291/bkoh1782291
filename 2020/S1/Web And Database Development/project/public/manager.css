@@ -1,0 +1,72 @@
+.leftboxed {
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 14px 20px;
+}
+
+.rightboxed{
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 14px 20px;
+    margin: 0px 300px;
+    float: right;
+}
+
+
+.addtask{
+  background-color: #82C0CC;
+  border: 1px solid black;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 100px;
+  cursor: pointer;
+
+  font-size: 14px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.deletetask{
+  background-color: #82C0CC;
+  border: 1px solid black;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 100px;
+  cursor: pointer;
+
+  font-size: 14px;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.box-container{
+  display:inline-block;
+  width: 1350px;
+  padding: 20px;
+}
+
+.box{
+  display:block;
+  width: 350px;
+  height: 400px;
+  float:left;
+  background:#f1f1f1;
+  color: black;
+  margin-left: 0.3%;
+  border-radius: 10px;
+  padding: 40px 40px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.titleline{
+  border: 2px solid grey;
+  border-radius: 12px;
+  margin: 2px 100px;
+  width: 40%;
+  display: block;
+}

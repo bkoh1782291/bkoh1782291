@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <title>Managers Home Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="users.css" >
+        <link rel="stylesheet" type="text/css" href="manager.css" >
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="scripts.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="top-container">
+        <h1 style="padding: 5px">Manager's Page</h1>
+      </div>
+
+      <div class="header" id="myHeader" >
+        <h2>
+          <button class="headerbutton" style="float: right">Sign Out</button>
+          <a class="clock" id="clockbox"></a>
+        </h2>
+      </div>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<!--content-->
+  <div class="content">
+    <h3 style="padding: 5px; font-size: 28px">This Week's Tasks!
+      <button style="float: right; background-color: #F5B82E; color: black" class="headerbutton" onclick="editprofile();">Edit Profile</button>
+    </h3>
+
+    <hr class="line1"> <!--horizontal line-->
+    <p style="padding: 5px"></p>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Today</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group">
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="users-btn-group">
+      <button>Website Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>7h</button>
+      <button><progress id="file" value="30" max="100">30%</progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Data Leak</button>
+      <button>Brian, Rachel, Irvin </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>12h</button>
+      <button><progress id="file" value="70" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="90" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br><br><br><br>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Monday</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group">
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="users-btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred</button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="50" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Code</button>
+      <button>Brian </button>
+      <button style="background-color: #F4D06F">Medium</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Algorithms</button>
+      <button>Steve</button>
+      <button id="priority" style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox">Mark
+      </button>
+    </div>
+
+    <br>
+    <button class="userinvolvement" style="background-color: #E3B264"> Group Tasks Together  </button>
+
+    <br><br><br><br>
+
+<div class="box-container">
+    <div class="box">
+      Delete Task
+      <hr class="titleline" >
+      <br>
+      <!-- delete task-->
+      <div id="deletetask">
+          <br>
+          <div>
+            <p>Choose Which Task To Delete</p>
+            <br>
+            <input type="checkbox" id="Website Fix" value="Website Fix" v-model="checkedTasks">
+            <label for="Website Fix">Website Fix</label>
+            <input type="checkbox" id="Data Leak" value="Data Leak" v-model="checkedTasks">
+            <label for="Data Leak">Data Leak</label>
+            <input type="checkbox" id="Code" value="Code" v-model="checkedTasks">
+            <label for="Code">Code</label>
+            <br>
+            <span>Checked Tasks: {{ checkedTasks }}</span>
+          </div>
+          <br>
+          <button class="deletetask">Delete Task</button>
+      </div>
+      <!-- delete task -->
+    </div>
+
+    <div class="box">
+      Add Task
+      <hr class="titleline" >
+      <!--add task-->
+      <div id="newtask">
+          <br>
+          <p>Name For New Task</p>
+          <input v-model="message" placeholder="edit me">
+            <p>Task Name Will Be: {{ message }}</p>
+          <br>
+          <div>
+            <p>Assign People To The New Task</p>
+            <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+            <label for="jack">Jack</label>
+            <input type="checkbox" id="john" value="John" v-model="checkedNames">
+            <label for="john">John</label>
+            <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+            <label for="mike">Mike</label>
+            <br>
+            <span>Checked Names: {{ checkedNames }}</span>
+          </div>
+          <br>
+          <button class="addtask">Add Task</button>
+      </div>
+      <!--add task-->
+    </div>
+
+    <div class="box">
+      Group Task
+      <hr class="titleline" >
+      <!-- group tasks -->
+      <div id="newgroupedtask">
+        <br>
+        <p>Name For New Task</p>
+        <input v-model="grouptaskname" placeholder="edit me">
+            <p>Grouped Task Name Will Be: {{ grouptaskname }}</p>
+          <br>
+      </div>
+    </div>
+</div>
+
+  <br><br><br>
+
+  <footer class="footer">
+    <h2 class="popup">
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right" onclick="popupbtnright()"> Contact </button>
+            <span class="popuptextright" id="myPopupright">
+              Contact Email: a1782291@adelaide.edu.au
+            </span>
+        <button class="footerbutton" style="float: left" onclick="popupbtnleft()"> Help </button>
+            <span class="popuptextleft" id="myPopupleft">
+                Delete, add, and group tasks together
+            </span>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+  <script>
+      window.onscroll = function() {scrollingheader();};
+
+      var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+      function GetClock(){
+      var d=new Date();
+      var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+      var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+      if(nhour==0){ap=" AM";nhour=12;}
+      else if(nhour<12){ap=" AM";}
+      else if(nhour==12){ap=" PM";}
+      else if(nhour>12){ap=" PM";nhour-=12;}
+
+      if(nmin<=9) nmin="0"+nmin;
+      if(nsec<=9) nsec="0"+nsec;
+
+      var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+      document.getElementById('clockbox').innerHTML=clocktext;
+      }
+      GetClock();
+      setInterval(GetClock,1000);
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <title>Login Page</title>
+        <script src="scripts.js"></script>
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <meta name="google-signin-client_id" content="28180649728-spdsusq4v84jussu0s5gjppakt31jcjc.apps.googleusercontent.com">
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="login.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+      <div class="top-container">
+        <h1 style="padding: 5px">Login Page</h1>
+      </div>
+
+      <div class="header" id="myHeader" >
+        <h2>
+          <button class="headerbutton" style="float: right" onclick="homeredirect()">Back To Home</button>
+          <a class="clock" id="clockbox"></a>
+        </h2>
+      </div>
+
+    <br><br><br>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- Login Page Code -->
+    <div id="main-holder" class="loginbody" style="margin: auto;">
+
+    <br><br><br>
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password !</span></p>
+      <br>
+      <h3 style="color: black; margin: 10px" >Welcome Back ! Login To Access</h3>
+      <hr class="line3" style="color: black">
+    </div>
+<br>
+
+    <form action="login" method="POST" id="login-form">
+				<input class="login-form-field" type="text" name="username" placeholder="Username" required>
+				<input class="login-form-field" type="password" name="password" placeholder="Password" required>
+				<input type="submit" value="Login" id="login-form-submit">
+		</form>
+
+    <br>
+     <h4 style="text-align: center; color: black">Or, Login with Google</h4>
+      <div class="g-signin2" data-onsuccess="onSignIn" style="padding: 0px 330px"></div>
+    <br>
+
+    <a href="#" onclick="signOut();" style="text-align: center">Sign Out</a>
+
+    <h4 style="text-align: center; color: black">Don't have an account ? <button class="allbutton" onclick="signupredirect()" >Sign Up Here !</button></h4>
+
+    </div>
+
+    <br><br><br>
+
+  <footer class="footer">
+    <h2 class="popup">
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right" onclick="popupbtnright()"> Contact </button>
+            <span class="popuptextright" id="myPopupright">
+              Contact Email: a1782291@adelaide.edu.au
+            </span>
+            <span class="popuptextleft" id="myPopupleft">
+                Login to access to your task manager
+            </span>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+    <script>
+      window.onscroll = function() {scrollingheader();};
+
+      var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+      function GetClock(){
+          var d=new Date();
+          var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+          var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+          if(nhour==0){ap=" AM";nhour=12;}
+          else if(nhour<12){ap=" AM";}
+          else if(nhour==12){ap=" PM";}
+          else if(nhour>12){ap=" PM";nhour-=12;}
+
+          if(nmin<=9) nmin="0"+nmin;
+          if(nsec<=9) nsec="0"+nsec;
+
+          var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+          document.getElementById('clockbox').innerHTML=clocktext;
+          }
+      GetClock();
+      setInterval(GetClock,1000);
+
+    </script>
+    </body>
+</html>

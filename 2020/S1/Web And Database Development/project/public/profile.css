@@ -1,0 +1,56 @@
+.line12{
+  border: 2px solid grey;
+  border-radius: 12px;
+  width: 50%;
+  display: block;
+}
+
+.box-container{
+  display: inline-block;
+  width: 1500px;
+}
+
+.box1{
+  display:block;
+  width: 600px;
+  height: 500px;
+  float:left;
+  background:white;
+  color: black;
+  margin-left: 0px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.box2{
+  display:block;
+  width: 800px;
+  height: 500px;
+  float:left;
+  background:white;
+  color: black;
+  margin-left: 0px;
+  border-radius: 10px;
+  padding: 20px 20px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.roundimg {
+  border-radius: 50%;
+  padding: 10px 10px;
+}
+
+.rectangle{
+  background-color: #3D5A80;
+  color: white;
+  padding: 10px 10px;
+  margin: 20px 10px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 2px;
+  font-size: 20px;
+}

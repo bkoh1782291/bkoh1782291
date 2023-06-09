@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+    <head>
+      <title>Users Home Page</title>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="users.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <div class="top-container">
+        <h1 style="padding: 5px">User's Page</h1>
+      </div>
+
+      <div class="header" id="myHeader" >
+        <h2>
+          <button class="headerbutton" style="float: right" onclick="LogOut();">Sign Out</button>
+          <a class="clock" id="clockbox"></a>
+        </h2>
+      </div>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<!--content-->
+  <div class="content">
+    <h3 style="padding: 5px; font-size: 28px">This Week's Tasks!
+      <button style="float: right; background-color: #F5B82E; color: black" class="headerbutton" onclick="userprofile();">Edit Profile</button>
+    </h3>
+
+    <hr class="line1"> <!--horizontal line-->
+    <p style="padding: 5px"></p>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Today</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group" >
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="users-btn-group">
+      <button>Website Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>7h</button>
+      <button><progress id="file" value="30" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+    <br>
+
+    <div class="users-btn-group">
+      <button>Data Leak</button>
+      <button>Brian, Rachel, Irvin </button>
+      <button style="background-color: #DB5943">High</button>
+      <button>12h</button>
+      <button><progress id="file" value="70" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+    <br>
+
+    <div class="users-btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred </button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="90" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+    <br>
+    <!-- updating involvement -->
+    <form action="/userfunctions" method="POST">
+      <button class="userinvolvement" style="background-color: #E3B264"> Confirm Involvement </button>
+      <br><br><br>
+      <button class="userinvolvement" style="background-color: #E3B264" name="completeflag"> Mark As Complete </button>
+    </form>
+
+    <br><br><br>
+
+    <h3 style="margin-left:25px; padding: 0px; font-size: 24px">Monday</h3>
+    <hr class="line2" style="float: left">
+
+    <br><br>
+
+    <div class="title-group">
+      <button>Task</button>
+      <button>Users</button>
+      <button>Priority</button>
+      <button>Time-Left</button>
+      <button>Progress</button>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="users-btn-group">
+      <button>Server Fix</button>
+      <button>Brian, John, Alfred</button>
+      <button style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="50" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Code</button>
+      <button>Brian </button>
+      <button style="background-color: #F4D06F">Medium</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+
+    <br>
+
+    <div class="users-btn-group">
+      <button>Algorithms</button>
+      <button>Steve</button>
+      <button id="priority" style="background-color: #4CAF50">Low</button>
+      <button>12h</button>
+      <button><progress id="file" value="40" max="100"> 30% </progress></button>
+      <button style="width: 10%">
+        <input type="checkbox" id="taskcheck" name="mytask" value="1" checked>Mark
+      </button>
+    </div>
+
+    <br>
+    <!-- updating involvement -->
+    <form action="/userfunctions" method="POST">
+      <button class="userinvolvement" style="background-color: #E3B264"> Confirm Involvement </button>
+      <br><br><br>
+      <button class="userinvolvement" style="background-color: #E3B264" name="completeflag"> Mark As Complete </button>
+    </form>
+    <br><br><br>
+
+    <h3>Edit Un-Avaliability</h3>
+    <form action="/updateavaliability" method="POST" id="role-selection"> <!-- form causes page to reload -->
+        <input type="date" id="myDate" name="avaldate" min="2020-01-01" max="2020-12-31" class="avaliability">
+    <br><br>
+        <input type="submit" value="Confirm" class="footerbutton" style="float: left"></input>
+    </form>
+    <p id="test"></p>
+    <br><br><br>
+  </div>
+
+  <br><br><br>
+
+  <footer class="footer">
+    <h2 class="popup">
+      <p style="font-size:16px">Copyright<sup>TM</sup>
+        <button class="footerbutton" style="float: right" onclick="popupbtnright()"> Contact </button>
+            <span class="popuptextright" id="myPopupright">
+              Contact Email: a1782291@adelaide.edu.au
+            </span>
+        <button class="footerbutton" style="float: left" onclick="popupbtnleft()"> Help </button>
+            <span class="popuptextleft" id="myPopupleft">
+                Mark tasks to update avaliability
+            </span>
+        <button class="footerbutton" onclick="darkmode()" style="float: right; background-color: #E3B264">Dark Mode</button>
+      </p>
+    </h2>
+  </footer>
+
+    <script>
+        window.onscroll = function() {scrollingheader();};
+
+        var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+        function GetClock(){
+        var d=new Date();
+        var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+        if(nhour==0){ap=" AM";nhour=12;}
+        else if(nhour<12){ap=" AM";}
+        else if(nhour==12){ap=" PM";}
+        else if(nhour>12){ap=" PM";nhour-=12;}
+
+        if(nmin<=9) nmin="0"+nmin;
+        if(nsec<=9) nsec="0"+nsec;
+
+        var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+" "+nhour+":"+nmin+":"+nsec+ap+"";
+        document.getElementById('clockbox').innerHTML=clocktext;
+        }
+        GetClock();
+        setInterval(GetClock,1000);
+    </script>
+
+
+    </body>
+</html>

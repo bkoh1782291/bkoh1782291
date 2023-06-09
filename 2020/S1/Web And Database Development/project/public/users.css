@@ -1,0 +1,59 @@
+/* button group to display taks */
+.users-btn-group button {
+  background-color: #82C0CC;
+  border: 1px solid black;
+  color: white;
+  padding: 14px 20px;
+  margin: 2px;
+  cursor: pointer;
+  float: left;
+  font-size: 20px;
+  width: 17%;
+  border-radius: 5px;
+}
+
+.title-group button{
+  background-color: #D2D4DA;
+  border: 1px solid #D2D4DA;
+  padding: 10px 2px;
+  margin: 2px;
+  cursor: pointer;
+  float: left;
+  font-size: 20px;
+  width: 17%;
+  border-radius: 5px;
+}
+
+.users-btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.users-btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+.users-btn-group button:hover {
+  background-color: #475671;
+}
+
+.userinvolvement {
+  background-color: #82C0CC;
+  border: 1px solid black;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 40px;
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  width: 15%;
+  border-radius: 5px;
+}
+
+.avaliability{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+}
